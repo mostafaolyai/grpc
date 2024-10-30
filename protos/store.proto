@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package storeproto;
+
+service StoreService {
+    rpc getStores(getStoreRequest) returns (getStoresResponse) {}
+    rpc addStore(addStoreRequest) returns (addStoresResponse) {}
+}
+
+message getStoreRequest{
+
+}
+
+message getStoresResponse {
+    repeated Store stores = 1;
+}
+
+message addStoreRequest{
+    int32 id = 1;
+    string name = 2;
+}
+
+message addStoresResponse {
+    repeated Store stores = 1;
+}
+
+message Store {
+    int32 id = 1;
+    string name = 2;
+}
